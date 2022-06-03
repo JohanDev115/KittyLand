@@ -1,0 +1,367 @@
+:root {
+    --live-blue: #30DFF2;
+    --dark: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    place-items: center;
+    top: 0%;
+    width: 100%;
+    height: 12vh;
+    box-shadow: 0 3px 5px gray;
+}
+
+.menu-button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    text-align: center;
+    background-image: url("../assets/Icons/menu.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header__title {
+    text-align: center;
+    font-size: 3.6rem;
+    color: var(--live-blue);
+    font-family: 'Pacifico', cursive;
+}
+
+.header__title > span {
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sidenav {
+    background-color: white;
+    position: relative;
+    width: 0%;
+    overflow: hidden;
+    height: 100%;
+    z-index: 4;
+    transition: width 0.3s;
+}
+
+.nav-bar {
+    display: none;
+    justify-content: space-evenly;
+    justify-items: center;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.nav {
+    padding-top: 30px;
+}
+
+.tab {
+    font-size: 1.8rem;
+    color: var(--dark);
+    text-decoration: none;
+    display: block;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.contactme {
+    color: var(--live-blue);
+    font-weight: bold;
+}
+
+.tab:hover {
+    color: var(--live-blue);
+}
+
+.closebtn {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 3.6rem;
+    text-decoration: none;
+    color: var(--live-blue);
+}
+
+.footer {
+    width: 100%;
+    padding: 16px 0;
+    position: absolute;
+    bottom: 0;
+}
+
+.credits {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icons__icon {
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icons__icon--github {
+    background-image: url("../assets/Icons/github.svg");
+}
+
+.icons__icon--facebook {
+    background-image: url("../assets/Icons/facebook.svg");
+}
+
+.icons__icon--instagram {
+    background-image: url("../assets/Icons/instagram.svg");
+}
+
+main {
+    position: absolute;
+    top: 17%;
+    width: 100%;
+    height: 72vh;
+}
+
+.nav-button {
+    position: absolute;
+    z-index: 1;
+    width: 35%;
+    height: 85%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.nav-button--prev {
+    left: 0;
+}
+
+.nav-button--next {
+    right: 0;
+}
+
+.kitty-images {
+    position: relative;
+    align-items: center;
+    width: 100%;
+    max-width: 640px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+}
+
+.kitty-images--random {
+    display: flex;
+}
+
+.kitty-images--favorite {
+    display: none;
+}
+
+.kitty-image-container {
+    position: relative;
+    min-width: 320px;
+    height: 100%;
+    margin: 0 40px;
+    scroll-snap-align: center;
+}
+
+.kitty-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.image-buttons {
+    position: absolute;
+    z-index: 1;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.image-buttons__button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.image-buttons__button--download {
+    background-image: url("../assets/Icons/download.svg");
+}
+
+.image-buttons__button--favorite {
+    background-image: url("../assets/Icons/favorite.svg");
+}
+
+.image-buttons__button--share {
+    background-image: url("../assets/Icons/share.svg");
+}
+
+footer {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+}
+
+.copy {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.upload-images {
+    display: none;
+}
+
+.upload-images__title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+.upload-form {
+    margin-top: 20px;
+}
+
+.upload-input-container {
+    background-color: var(--live-blue);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 0;
+    min-height: 15px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+  
+.upload-input-container__input {
+   border: 10000px solid transparent;
+   cursor: pointer;
+   font-size: 10000px;
+   margin: 0;
+   opacity: 0;
+   outline: 0 none;
+   padding: 0;
+   position: absolute;
+   right: -1000px;
+   top: -1000px;
+}
+
+.upload-tester {
+    width: 320px;
+    height: 260px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.upload-form__button {
+    font-size: 2rem;
+    padding: 6px 24px;
+    background-color: #23f011;
+    color: #fff;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}
+
+.upload-tester > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (min-width: 600px) {
+    .kitty-image-container {
+        min-width: 360px;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-button {
+        display: none;
+    }
+
+    .header {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        justify-content: flex-end;
+    }
+
+    .header__title {
+        font-size: 4rem;
+    }
+
+    .nav-bar {
+        display: flex;
+    }
+}
+
+@media (min-width: 1024px) {
+    .kitty-image-container {
+        min-width: 365px;
+    }
+    .random-kitties-images {
+        max-width: 680px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .kitty-image-container {
+        min-width: 380px;
+    }
+    .random-kitties-images {
+        max-width: 680px;
+    }
+}
+
