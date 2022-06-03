@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a class="menu-button" onclick="openNav()"></a>
+        <h1 class="header__title">KittyLand <span>Beta V1.0</span> </h1>
+        <nav class="nav-bar">
+            <a class="tab" href="">Home</a>
+            <a class="tab" href="#" onclick="alert('available soon'); javascipt:return false;">Favorites</a>
+            <a class="tab" href="#" onclick="alert('available soon'); javascipt:return false;">Uploads</a>
+            <a class="tab contactme" href="https://johandev115.github.io/JohanDev115/index.html">Contact Me</a>
+        </nav>
+    </header>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="nav">
+            <a class="tab" href="#" onclick="alert('available soon'); javascipt:return false;">Favorites</a>
+            <a class="tab" href="#" onclick="alert('available soon'); javascipt:return false;">Uploads</a>
+        </div>
+        <div class="footer">
+            <p class="credits">Contact Me</p>
+            <div class="icons">
+                <a href="https://github.com/JohanDev115" class="icons__icon icons__icon--github"></a>
+                <a href="https://www.facebook.com/JohanDev-106866391958410" class="icons__icon icons__icon--facebook"></a>
+                <a href="https://www.instagram.com/johandev115" class="icons__icon icons__icon--instagram"></a>
+            </div>
+        </div>
+    </div>
+    <main>
+        <button class="nav-button nav-button--prev" onclick="prev()"></button>
+        <button class="nav-button nav-button--next" onclick="next()"></button>
+        <section id="random-images-container" class="kitty-images kitty-images--random">
+        </section>
+
+        <!-- Favorite Section -->
+
+        <section id="favorite-images-container" class="kitty-images kitty-images--favorite">
+        </section>
+
+        <!-- Upload Section -->
+
+        <section class="upload-images">
+            <h2 class="upload-images__title">Upload your Cat Image :3</h2>
+            <form id="upload-form" class="upload-form">
+                <div class="upload-input-container">
+                    <input class="upload-input-container__input" name="file" id="file" type="file">
+                    Select your Kitty...
+                </div>
+                <div class="upload-tester">
+                    <img id="upload-tester" class="kitty-image" alt="">
+                </div>
+                <button class="upload-form__button" type="button" onclick="uploadKittyPhoto()">Upload</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p class="copy">By &#169JohanDev - 2022</p>
+    </footer>
+    <!-- <header class="header">
+        <h1 class="header__title">KittyLand</h1>
+    </header>
+    <main>
+        <section class="random-images">
+            <h2 class="random-images__title">Random Kitty Images</h2>
+            <div class="images-container">
+                <div class="kitty-image-container">
+                    <img class="kitty-image" alt="Kitty Image">
+                    <button class="post-favorite">Favorities</button>
+                </div>
+                <div class="kitty-image-container">
+                    <img class="kitty-image" alt="Kitty Image">
+                    <button class="post-favorite">Favorities</button>
+                </div>
+                <div class="kitty-image-container">
+                    <img class="kitty-image" alt="Kitty Image">
+                    <button class="post-favorite">Favorities</button>
+                </div>
+            </div>
+        </section>
+        <br>
+        <section class="favorite-images">
+            <h2 class="favorite-images__title">Favorties Kitty Images</h2>
+            <div id="favorite-images" class="images-container">
+            </div>
+        </section>
+        <br>
+        <section class="upload-images">
+            <h2 class="upload-images__title">Upload your kitty photo</h2>
+            <form id="upload-form">
+                <input name="file" id="file" type="file">
+                <button type="button" onclick="uploadKittyPhoto()">Upload Kitty</button>
+            </form>
+        </section>
+    </main> -->
+    <script src="./code/images_controller.js"></script>
+    <script src="./code/main.js"></script>
+    <script src="./code/api_code.js"></script>
+</body>
+</html>
