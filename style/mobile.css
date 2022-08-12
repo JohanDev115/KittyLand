@@ -241,7 +241,7 @@ main {
 
 footer {
     position: absolute;
-    display: grid;
+    display: none;
     place-items: center;
     bottom: 0;
     width: 100%;
@@ -344,6 +344,10 @@ footer {
 
     .nav-bar {
         display: flex;
+    }
+
+    footer {
+        display: grid;
     }
 }
 
