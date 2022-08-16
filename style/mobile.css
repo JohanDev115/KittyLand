@@ -17,7 +17,8 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-X: hidden;
+    overflow-y: scroll;
     font-family: 'Roboto', sans-serif;
 }
 
