@@ -1,10 +1,12 @@
-const API_URL_RANDOM = "https://api.thecatapi.com/v1/images/search?limit=100";
+const API_URL_RANDOM = "https://api.thecatapi.com/v1/images/search?limit=10";
 const API_URL_FAVORITES = "https://api.thecatapi.com/v1/favourites";
 const API_URL_UPLOAD = "https://api.thecatapi.com/v1/images/upload";
 
 const saveButtons = document.getElementsByClassName('post-favorite');
 const downloadButtons = document.getElementsByClassName('download-button');
 const shareButtons = document.getElementsByClassName('share-button');
+
+const AMOUNT_IMAGES = 10;
 
 function createImg(section, urlImage) {
     const imageContainer = document.createElement('DIV');
@@ -31,14 +33,16 @@ function createImg(section, urlImage) {
 
 async function loadRandomKitties() {
 
-    const response = await fetch(API_URL_RANDOM);
+    const response = await fetch(API_URL_RANDOM, {
+        page: 1
+    });
     const data = await response.json();
 
     if (response.status != 200) {
         console.log("Was an error");
     } else {
         
-        for (let index = 0; index < 50; index++) {
+        for (let index = 1; index < AMOUNT_IMAGES; index++) {
             createImg(document.getElementById('random-images-container'));
         }
 
@@ -48,18 +52,18 @@ async function loadRandomKitties() {
         kitty_images.forEach((image, index) => {
             image.src = data[index].url;
 
-            saveButtons[index].addEventListener("click", function() {
-                // saveFavoriteKitty(data[index].id);
-                alert("Available soon");
-            });
+            // saveButtons[index].addEventListener("click", function() {
+            //     saveFavoriteKitty(data[index].id);
+            //     alert("Available soon");
+            // });
 
-            downloadButtons[index].addEventListener("click", function() {
-                alert("Available soon");
-            });
+            // downloadButtons[index].addEventListener("click", function() {
+            //     alert("Available soon");
+            // });
 
-            shareButtons[index].addEventListener("click", function() {
-                alert("Available soon");
-            });
+            // shareButtons[index].addEventListener("click", function() {
+            //     alert("Available soon");
+            // });
         });
     }
 }
@@ -157,30 +161,3 @@ async function uploadKittyPhoto() {
 
 loadRandomKitties();
 loadFavoriteKitties();
-
-const images = document.getElementsByClassName('kitty-image');
-
-var scrollPos = 0;
-
-function next() {
-    if (scrollPos != images.length - 1) {
-        scrollPos += 1;
-    }
-    
-    images[scrollPos].scrollIntoView();
-}
-
-function prev() {
-    if (scrollPos != 0) {
-        scrollPos -= 1;
-    }
-    images[scrollPos].scrollIntoView();
-}
-
-document.addEventListener("keydown", (event) => {
-    if (event.key == "ArrowRight") {
-        next();
-    } else if (event.key == "ArrowLeft") {
-        prev();
-    }
-});
